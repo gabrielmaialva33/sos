@@ -1,11 +1,11 @@
 <h1 align="center">
-  <img src=".github/images/logo.svg" height="100px" alt="Happy">
+  <img src=".github/images/logo-banner.svg" height="100px" alt="Happy">
 </h1>
 <p align="center">
   <img src="https://img.shields.io/badge/web%3F-ok-00b8d3?style=for-the-badge" alt="Sistema web Ok" />
   <img src="https://img.shields.io/badge/server%3F-ok-00b8d3?style=for-the-badge" alt="Server Ok" />
   <img src="https://img.shields.io/badge/app mobile%3F-No-00b8d3?style=for-the-badge" alt="Aplicativo mobile No" />
-  <img src="https://img.shields.io/github/license/gabrielmaia/proffy?color=00b8d3&style=for-the-badge" alt="License" />
+  <img src="https://img.shields.io/github/license/gabrielmaia/sos?color=00b8d3&style=for-the-badge" alt="License" />
 </p>
 
 <p align="center">
