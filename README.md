@@ -37,8 +37,7 @@
 
 
 <p align="center">
-    <img alt="Screens" src=".github/images/home-page.png" height="260px" />
-  <img alt="Screens" src=".github/images/sign-banner.png" height="260px" />
+    <img alt="Screens" src=".github/images/home-page.png" height="350px" />
 </p>
 
 
