@@ -1,0 +1,59 @@
+{
+    "env": {
+        "browser": true,
+        "es2020": true
+    },
+    "extends": [
+      "plugin:react/recommended",
+      "airbnb",
+      "prettier/@typescript-eslint",
+      "plugin:prettier/recommended"
+    ],
+    "globals": {
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly"
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint",
+        "react-hooks",
+        "prettier",
+        "import"
+    ],
+    "rules": {
+      "prettier/prettier": "error",
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
+      "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
+      "import/prefer-default-export": "off",
+      "no-use-before-define": "off",
+      "react/jsx-curly-brace-presence": "off",
+      "react/jsx-one-expression-per-line": "off",
+      "jsx-a11y/label-has-associated-control": "off",
+      "jsx-a11y/anchor-is-valid": "off",
+      "react/button-has-type": "off",
+      "camelcase": "off",
+      "react/jsx-no-target-blank": "off",
+      "import/extensions": [
+        "error",
+        "ignorePackages",
+          {
+            "ts": "never",
+            "tsx": "never"
+          }
+         ]
+    },
+    "settings": {
+      "import/resolver": {
+        "typescript": {}
+      }
+    }
+}
