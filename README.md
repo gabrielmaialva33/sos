@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src=".github/images/logo-banner.svg" height="100px" alt="Happy">
+  <img src=".github/images/logo-banner.png" height="100px" alt="Happy">
 </h1>
 <p align="center">
   <img src="https://img.shields.io/badge/web%3F-ok-00b8d3?style=for-the-badge" alt="Sistema web Ok" />
