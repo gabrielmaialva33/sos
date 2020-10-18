@@ -1,0 +1,88 @@
+#page-signup {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(329.54deg, #b8f0ff 0%, #cff5ff 100%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#page-signup .content-wrapper {
+  position: relative;
+
+  width: 100%;
+  max-width: 1300px;
+
+  height: 100%;
+  max-height: 680px;
+
+  margin-left: 70px;
+  margin-right: 70px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+#page-signup .content-wrapper img {
+  margin-top: 20px;
+}
+
+#page-signup .content-wrapper main h1 {
+  font-weight: 800;
+  font-size: 72px;
+
+  margin-top: 5%;
+}
+
+#page-signup .content-wrapper main p {
+  width: 100%;
+  height: 100%;
+
+  max-width: 536px;
+  max-height: 116px;
+
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+
+  margin-left: 30px;
+  margin-bottom: 10%;
+  margin-top: 5%;
+}
+
+#page-signup .content-wrapper .back-link {
+  margin-bottom: 3%;
+}
+
+#page-signup .card-form {
+  display: flex;
+  width: 100%;
+
+  margin-top: 20px;
+  margin-left: 20%;
+}
+
+#page-signup .card-form .content-form {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+}
+
+#page-signup .card-form .content-form .input-block {
+  display: flex;
+  flex-direction: column;
+}
+
+#page-signup .card-form .content-form .input-block input {
+  width: 100%;
+  max-width: 480px;
+
+  height: 60px;
+}
+
+#page-signup .card-form .content-form .input-block + .input-block {
+  margin-top: 10px;
+}
