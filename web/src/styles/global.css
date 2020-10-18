@@ -80,7 +80,7 @@ label {
 }
 
 .back-link:hover {
-  filter: opacity(0.8);
+  filter: opacity(0.75);
 }
 
 .back-link .back-button {

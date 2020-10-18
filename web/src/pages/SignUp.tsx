@@ -21,7 +21,7 @@ const SignUp: React.FC = () => {
             </p>
           </main>
 
-          <Link to="/" className="back-link">
+          <Link to="/login" className="back-link">
             <button className="back-button">
               <FiArrowLeft size="30" color="#fff" />
             </button>
