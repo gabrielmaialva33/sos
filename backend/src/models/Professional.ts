@@ -1,13 +1,8 @@
-import {
-  Entity,
-  Column,
-  PrimaryGeneratedColumn,
-  CreateDateColumn,
-} from 'typeorm';
+import { Entity, Column, CreateDateColumn, PrimaryColumn } from 'typeorm';
 
 @Entity('professionals')
 export default class Professional {
-  @PrimaryGeneratedColumn('increment')
+  @PrimaryColumn('')
   id: string;
 
   @Column({ type: 'varchar', length: 50 })

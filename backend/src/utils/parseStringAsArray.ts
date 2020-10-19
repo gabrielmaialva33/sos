@@ -1,3 +1,6 @@
-export default function parseStringAsArray(arrayAsString: string) {
-  return arrayAsString.split(',').map(knowledge => knowledge.trim());
+export default function parseStringAsArray(arrayAsString: String) {
+  return arrayAsString
+    .toString()
+    .split(',')
+    .map(knowledge => knowledge.trim());
 }

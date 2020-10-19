@@ -9,11 +9,8 @@ export default class createProfessionals1602873098499
         columns: [
           {
             name: 'id',
-            type: 'integer',
-            unsigned: true,
+            type: 'varchar(6)',
             isPrimary: true,
-            isGenerated: true,
-            generationStrategy: 'increment',
           },
           {
             name: 'name',

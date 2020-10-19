@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { getRepository } from 'typeorm';
+import crypto from 'crypto';
 
 import Professional from '../models/Professional';
 import parseStringAsArray from '../utils/parseStringAsArray';
@@ -33,7 +34,10 @@ export default {
 
     const knowledgeArray = parseStringAsArray(knowledges);
 
+    const id = crypto.randomBytes(3).toString('hex').toUpperCase();
+
     const professional = professinalRepository.create({
+      id,
       name,
       email,
       whatsapp,
