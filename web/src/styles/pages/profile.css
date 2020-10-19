@@ -47,6 +47,14 @@
   justify-content: center;
 }
 
+#page-profile .content-wrapper .content-form input::placeholder {
+  color: #000;
+}
+
+#page-profile .content-wrapper .content-form textarea::placeholder {
+  color: #000;
+}
+
 #page-profile .content-wrapper .input-block + .input-block {
   margin-top: 10px;
 }

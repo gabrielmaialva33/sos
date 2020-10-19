@@ -28,8 +28,14 @@ const SignUp: React.FC = () => {
     };
 
     try {
+      if (!name || !email || !whatsapp || !knowledges || !bio) {
+        throw new Error();
+      }
+
       const response = await api.post('professinals', data);
-      alert(`Seu ID de acesso: ${response.data.id}`);
+      alert(
+        `Cadastro realizado com sucesso.\nSeu ID de acesso: ${response.data.id}`,
+      );
       history.push('/');
     } catch (error) {
       alert(`Errro no cadastro`);
