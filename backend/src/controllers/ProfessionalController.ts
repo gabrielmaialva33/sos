@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import { getRepository } from 'typeorm';
 
 import Professional from '../models/Professional';
+import parseStringAsArray from '../utils/parseStringAsArray';
 
 export default {
   // -> index
@@ -30,11 +31,13 @@ export default {
 
     const { name, email, whatsapp, knowledges, bio } = req.body;
 
+    const knowledgeArray = parseStringAsArray(knowledges);
+
     const professional = professinalRepository.create({
       name,
       email,
       whatsapp,
-      knowledges,
+      knowledges: knowledgeArray,
       bio,
     });
 

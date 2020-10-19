@@ -20,22 +20,21 @@ const SignUp: React.FC = () => {
   async function handleSubmit(event: FormEvent) {
     event.preventDefault();
 
-    const data = new FormData();
-
-    data.append('name', name);
-    data.append('email', email);
-    data.append('whatsapp', whatsapp);
-    data.append('knowledges', knowledges);
-    data.append('bio', bio);
+    const data = {
+      name,
+      email,
+      whatsapp,
+      knowledges,
+      bio,
+    };
 
     try {
-      const response = await api.post('/orphanages', data);
+      const response = await api.post('professinals', data);
       alert(`Seu ID de acesso: ${response.data.id}`);
+      history.push('/');
     } catch (error) {
       alert(`Errro no cadastro`);
     }
-
-    history.push('/');
   }
 
   return (
