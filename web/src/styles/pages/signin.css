@@ -43,6 +43,15 @@
   margin-top: 5%;
 }
 
+#page-signin .content-wrapper form {
+  display: flex;
+  flex-direction: column;
+}
+
+#page-signin .content-wrapper form .input-logon {
+  margin-bottom: 15px;
+}
+
 #page-signin .content-wrapper .back-link {
   margin-bottom: 3%;
 }

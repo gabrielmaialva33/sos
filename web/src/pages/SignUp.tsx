@@ -1,12 +1,11 @@
 import React, { FormEvent, useState } from 'react';
 import { useHistory, Link } from 'react-router-dom';
-
 import { FiArrowLeft } from 'react-icons/fi';
 
 import '../styles/pages/signup.css';
 
-import logoImg from '../images/logo.svg';
 import api from '../services/api';
+import logoImg from '../images/logo.svg';
 
 const SignUp: React.FC = () => {
   const history = useHistory();

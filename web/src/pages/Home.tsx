@@ -15,7 +15,7 @@ const Home: React.FC = () => (
         <p>Ajude alguem a se motivar contando um pouco sobre você.</p>
       </main>
 
-      <Link to="/register" className="enter-app">
+      <Link to="/login" className="enter-app">
         Ajudar
       </Link>
     </div>
