@@ -15,7 +15,7 @@ const SignIn: React.FC = () => {
     event.preventDefault();
 
     try {
-      const response = await api.post('sessions', { id });
+      await api.post('sessions', { id });
       localStorage.setItem('@sos/professional_id', id);
       history.push('/profile');
     } catch (error) {

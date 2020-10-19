@@ -36,7 +36,7 @@ const Profile: React.FC = () => {
       .then(response => {
         setProfessional(response.data);
       });
-  }, [professionalId]);
+  }, [professionalId, history]);
 
   async function handleSubmit(event: FormEvent) {
     event.preventDefault();
@@ -50,7 +50,15 @@ const Profile: React.FC = () => {
     };
 
     try {
-      const response = await api.put('profile', data);
+      await api
+        .put('profile', data, {
+          headers: {
+            Authorization: professionalId,
+          },
+        })
+        .then(response => {
+          setProfessional(response.data);
+        });
       alert(`Seus dados foram atualizados com sucesso.`);
     } catch (error) {
       alert(`Errro ao atualizar dados.`);
@@ -90,7 +98,12 @@ const Profile: React.FC = () => {
           </div>
           <div className="input-block">
             <label htmlFor="email">Email</label>
-            <input id="email" placeholder={professional?.email} value={email} />
+            <input
+              id="email"
+              placeholder={professional?.email}
+              value={email}
+              onChange={event => setEmail(event.target.value)}
+            />
           </div>
           <div className="input-block">
             <label htmlFor="whatsapp">Whatsapp</label>
@@ -98,6 +111,7 @@ const Profile: React.FC = () => {
               id="whatsapp"
               placeholder={professional?.whatsapp}
               value={whatsapp}
+              onChange={event => setWhatsapp(event.target.value)}
             />
           </div>
           <div className="input-block">
@@ -106,6 +120,7 @@ const Profile: React.FC = () => {
               id="knowledges"
               placeholder={professional?.knowledges}
               value={knowledges}
+              onChange={event => setKnowledges(event.target.value)}
             />
           </div>
           <div className="input-block">
@@ -115,6 +130,7 @@ const Profile: React.FC = () => {
               placeholder={professional?.bio}
               maxLength={600}
               value={bio}
+              onChange={event => setBio(event.target.value)}
             />
           </div>
 

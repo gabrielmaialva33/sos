@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import { getRepository } from 'typeorm';
 
 import Professional from '../models/Professional';
+import parseStringAsArray from '../utils/parseStringAsArray';
 
 export default {
   // -> show
@@ -35,11 +36,13 @@ export default {
       return res.status(404).json({ error: 'Profile not found' });
     }
 
-    professional.name = name;
-    professional.email = email;
-    professional.whatsapp = whatsapp;
-    professional.knowledges = knowledges;
-    professional.bio = bio;
+    professional.name = name || professional.name;
+    professional.email = email || professional.email;
+    professional.whatsapp = whatsapp || professional.whatsapp;
+    professional.knowledges = knowledges
+      ? parseStringAsArray(knowledges)
+      : professional.knowledges;
+    professional.bio = bio || professional.bio;
 
     await professinalRepository.save(professional);
 
