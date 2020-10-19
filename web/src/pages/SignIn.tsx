@@ -17,7 +17,6 @@ const SignIn: React.FC = () => {
     try {
       const response = await api.post('sessions', { id });
       localStorage.setItem('@sos/professional_id', id);
-      localStorage.setItem('@sos/professional_name', response.data.name);
       history.push('/profile');
     } catch (error) {
       alert('Falha no Login, tente novamente');

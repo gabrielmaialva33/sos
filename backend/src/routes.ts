@@ -16,5 +16,6 @@ routes.post('/professinals', ProfessionalController.create);
 
 // -> profile
 routes.get('/profile', ProfileController.show);
+routes.put('/profile', ProfileController.update);
 
 export default routes;
