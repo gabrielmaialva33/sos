@@ -41,6 +41,8 @@
       "jsx-a11y/anchor-is-valid": "off",
       "react/button-has-type": "off",
       "camelcase": "off",
+      "no-unused-vars": "off",
+      "no-alert": "off",
       "react/jsx-no-target-blank": "off",
       "import/extensions": [
         "error",

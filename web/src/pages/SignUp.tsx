@@ -1,12 +1,43 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { FormEvent, useState } from 'react';
+import { useHistory, Link } from 'react-router-dom';
+
 import { FiArrowLeft } from 'react-icons/fi';
 
 import '../styles/pages/signup.css';
 
 import logoImg from '../images/logo.svg';
+import api from '../services/api';
 
 const SignUp: React.FC = () => {
+  const history = useHistory();
+
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [whatsapp, setWhatsapp] = useState('');
+  const [knowledges, setKnowledges] = useState('');
+  const [bio, setBio] = useState('');
+
+  async function handleSubmit(event: FormEvent) {
+    event.preventDefault();
+
+    const data = new FormData();
+
+    data.append('name', name);
+    data.append('email', email);
+    data.append('whatsapp', whatsapp);
+    data.append('knowledges', knowledges);
+    data.append('bio', bio);
+
+    try {
+      const response = await api.post('/orphanages', data);
+      alert(`Seu ID de acesso: ${response.data.id}`);
+    } catch (error) {
+      alert(`Errro no cadastro`);
+    }
+
+    history.push('/');
+  }
+
   return (
     <div id="page-signup">
       <div className="content-wrapper">
@@ -30,36 +61,58 @@ const SignUp: React.FC = () => {
         </div>
 
         <div className="card-form">
-          <div className="content-form">
+          <form onSubmit={handleSubmit} className="content-form">
             <div className="input-block">
               <label htmlFor="name">Nome</label>
-              <input id="name" placeholder="Ex: Amanda Padilha" />
-            </div>
-            <div className="input-block">
-              <label htmlFor="name">Email</label>
-              <input id="name" placeholder="Ex: amandapadilha@gmail.com" />
-            </div>
-            <div className="input-block">
-              <label htmlFor="name">Whatsapp</label>
-              <input id="name" placeholder="Ex: 15996601743" />
-            </div>
-            <div className="input-block">
-              <label htmlFor="name">Conhecimentos</label>
-              <input id="name" placeholder="Ex: React, Node e Typescript" />
-            </div>
-            <div className="input-block">
-              <label htmlFor="name">Bio</label>
-              <textarea
+              <input
                 id="name"
+                placeholder="Ex: Amanda Padilha"
+                value={name}
+                onChange={event => setName(event.target.value)}
+              />
+            </div>
+            <div className="input-block">
+              <label htmlFor="email">Email</label>
+              <input
+                id="email"
+                placeholder="Ex: amandapadilha@gmail.com"
+                value={email}
+                onChange={event => setEmail(event.target.value)}
+              />
+            </div>
+            <div className="input-block">
+              <label htmlFor="whatsapp">Whatsapp</label>
+              <input
+                id="whatsapp"
+                placeholder="Ex: 15996601743"
+                value={whatsapp}
+                onChange={event => setWhatsapp(event.target.value)}
+              />
+            </div>
+            <div className="input-block">
+              <label htmlFor="knowledges">Conhecimentos</label>
+              <input
+                id="knowledges"
+                placeholder="Ex: React, Node e Typescript"
+                value={knowledges}
+                onChange={event => setKnowledges(event.target.value)}
+              />
+            </div>
+            <div className="input-block">
+              <label htmlFor="bio">Bio</label>
+              <textarea
+                id="bio"
                 placeholder="Conte um pouco sobre você"
                 maxLength={600}
+                value={bio}
+                onChange={event => setBio(event.target.value)}
               />
             </div>
 
             <button className="button" type="submit">
               Cadastrar
             </button>
-          </div>
+          </form>
         </div>
       </div>
     </div>
